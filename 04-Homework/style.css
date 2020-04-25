@@ -1,4 +1,6 @@
-
+* {
+  border: pink 1px solid;
+}
 html, body {
   height: 100%;
 }

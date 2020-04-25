@@ -32,7 +32,7 @@ var questions = [
 ]
 
 var q = 0;
-var time = 0;
+var time = 10;
 
 
 $( document ).ready(function() {
@@ -41,14 +41,15 @@ $( document ).ready(function() {
   $("#question").text("Do you think you know Millie?");
   // Hide Answer Buttons & end
   $("#answer-buttons").hide();
-
   $("#end").hide();
+  // Set Timer to 60sec
+  $("#time").text(" " + time);
   // On Click Start Questions & timer
   $("#start-btn").on("click", function() {
     // hide start button 
     $("#start-btn").hide();
     newQuestion();
-    // timer(); ****
+    timer();
     $("#answer-buttons").show();
   });
 
@@ -85,6 +86,17 @@ $( document ).ready(function() {
     }
   }
   // # Timer
+  function timer() {
+    var countdown = setInterval( function () {
+      if (time > 0){
+        time = time - 1;
+        $("#time").text(" " + time)
+      } else {
+        clearInterval(countdown);
+        saveScore();
+      }
+    },1000);
+  }
   
 
   // # Enter Initials Save Score
