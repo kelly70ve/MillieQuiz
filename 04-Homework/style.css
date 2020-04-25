@@ -19,6 +19,20 @@ main {
   font-size: large;
 }
 
+/* User-Correct Styling */
+
+#user-correct {
+  font-family: 'Open Sans', sans-serif;
+  font-size: medium;
+}
+
+.true {
+  color: green;
+}
+
+.false {
+  color: red;
+}
 
 /* Answer Buttons */
 #answer-buttons .btn {

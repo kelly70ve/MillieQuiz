@@ -32,7 +32,8 @@ var questions = [
 ]
 
 var q = 0;
-var time = 10;
+var time = 60;
+var answerDisplay = 3;
 
 
 $( document ).ready(function() {
@@ -66,13 +67,13 @@ $( document ).ready(function() {
 
     // Right or Wrong 
     $(".answer").off().on("click", function() { 
-      event.stopPropagation();
       if (this.dataset.correct !== "true") {
-        alert("false!");
+        $("#user-correct").text("Wrong!").addClass("false")
       } else {
-        alert("true!")
+        $("#user-correct").text("True!").addClass("true")
       } 
       // Next 
+      answerTimer();
       next();
     });
   };
@@ -94,6 +95,20 @@ $( document ).ready(function() {
       } else {
         clearInterval(countdown);
         saveScore();
+      }
+    },1000);
+  }
+
+  // # Answer Timer
+  function answerTimer() {
+    var display = setInterval( function () {
+      if (answerDisplay > 0){
+        answerDisplay = answerDisplay - 1;
+        $("#user-correct").show();
+      } else {
+        clearInterval(display);
+        $("#user-correct").hide();
+        answerDisplay = 3;
       }
     },1000);
   }
