@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- BootStrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@700&display=swap"
+    rel="stylesheet">
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
   <title>Millie Quiz</title>
 </head>
+
 <body>
   <!-- Nav -->
   <nav>
@@ -21,7 +25,7 @@
         <a class="nav-link active" href="#">View High Scores</a>
       </li>
       <li class="nav-item">
-        <div class="nav-link active">Time Left: 0</div> 
+        <div class="nav-link active">Time Left: 0</div>
       </li>
     </ul>
   </nav>
@@ -30,7 +34,7 @@
     <!-- Container -->
     <div class="container card shadow p-3 mb-5 bg-white rounded">
       <!-- Question Container -->
-      <div id="question-container" class="hide">
+      <div id="question-container">
         <!-- Questions -->
         <div id="question" class="text-center p-4 mb-3">Question</div>
         <!-- Answer Buttons -->
@@ -46,13 +50,23 @@
         </div>
       </div>
       <!-- Start -->
-      <div class="controls d-flex justify-content-center">
+      <div class="d-flex justify-content-center">
         <button type="button" id="start-btn"
           class="start-btn btn btn-primary btn-lg btn-block shadow-sm p-3 rounded">Start</button>
+      </div>
+      <!-- End -->
+      <div class="text-center" id="end">
+        <p>Please enter your initials</p>
+        <div class="form-group">
+          <input type="text" class="form-control" id="inputName" placeholder="Initials" name="name">
+        </div>
+        <button type="button" id="sumbit-btn"
+          class="submit-btn btn btn-primary btn-lg btn-block shadow-sm p-3 rounded">Submit</button>
       </div>
     </div>
   </main>
   <!-- JS -->
   <script src="script.js"></script>
 </body>
+
 </html>

@@ -22,28 +22,32 @@ var questions = [
   {
     question: "Where is Millie's favorite hiking spot?",
     answers: [ 
-      {text: "Annie's Canyon", correct: true},
+      {text: "Annie's Canyon", correct: false},
       {text: "Cowel's Mountain", correct: false},
       {text: "Mission Trails", correct: false},
-      {text: "Fiesta Island", correct: false},
+      {text: "Fiesta Island", correct: true},
     ],
     class: ["annies", "cowels", "trails", "island"],
   }
 ]
+
+var time = 0;
 
 
 $( document ).ready(function() {
   // Start 
   // Intro Text
   $("#question").text("Do you think you know Millie?");
-  // Hide Answer Buttons
+  // Hide Answer Buttons & end
   $("#answer-buttons").hide();
+
+  $("#end").hide();
   // On Click Start Questions & timer
   $("#start-btn").on("click", function() {
     // hide start button 
     $("#start-btn").hide();
     questionOne();
-    // timer();
+    // timer(); ****
     $("#answer-buttons").show();
   })
 
@@ -51,44 +55,49 @@ $( document ).ready(function() {
     // Change Question Text
     $("#question").text(questions[0].question);
     // Change Answer Button Text
-
     for (var i = 0; i < 4; i++) {
       $("#answer" + i).text(questions[0].answers[i].text).addClass(questions[0].class[i]);
     }
-    // Change Answer Button Images
-    // On Click Right 
-    // On Click Wrong 
     $("#answer-buttons").on("click", function() {
+      // On Click Right  ****
+      // On Click Wrong (subtract from time) ****
+      // Change Question
       questionTwo();
     });
   };
 
   function questionTwo() {
-    // Change Question Text
     $("#question").text(questions[1].question);
-    // Change Answer Button Text
     for (var i = 0; i < 4; i++) {
       $("#answer" + i).text(questions[1].answers[i].text).addClass(questions[1].class[i]);
     }
-    // Change Answer Button Images
-    // On Click Right 
-    // On Click Wrong 
     $("#answer-buttons").on("click", function() {
       questionThree();
     });
   };
   
   function questionThree() {
-    // Change Question Text
     $("#question").text(questions[2].question);
     for (var i = 0; i < 4; i++) {
       $("#answer" + i).text(questions[2].answers[i].text).addClass(questions[2].class[i]);
     }
-    // Change Answer Button Images
-    // On Click Right 
-    // On Click Wrong 
     $("#answer-buttons").on("click", function() {
-      
+      highScore();
     });
   };
 });
+
+// Enter Initials Save Score
+function highScore() {
+  // Hide Buttons
+  $("#answer-buttons").hide();
+  // Change Text
+  $("#question").text("All Done! Your Score: " + time);
+  // show end
+  $("#end").show();
+  // Save initials and score 
+  // create object saves initials and score
+  // local storage
+}
+
+// High Score Page
