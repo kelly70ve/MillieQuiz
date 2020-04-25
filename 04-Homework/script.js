@@ -36,7 +36,7 @@ var time = 0;
 
 
 $( document ).ready(function() {
-  // Start 
+  // # Start 
   // Intro Text
   $("#question").text("Do you think you know Millie?");
   // Hide Answer Buttons & end
@@ -50,19 +50,21 @@ $( document ).ready(function() {
     newQuestion();
     // timer(); ****
     $("#answer-buttons").show();
-  })
+  });
 
+
+  // # New Question 
   function newQuestion() {
     // Change Question
     $("#question").text(questions[q].question);
-
+    
     // Change Answers
     for (var i = 0; i < 4; i++) {
       $("#answer" + i).text(questions[q].answers[i].text).addClass(questions[q].class[i]).attr("data-correct", questions[q].answers[i].correct);
     }
+
+    // Right or Wrong 
     $(".answer").on("click", function() { 
-      // On Click Right  ****
-      // On Click Wrong - subtract from time ****
       if (this.dataset.correct !== "true") {
         alert("false!");
       } else {
@@ -71,8 +73,8 @@ $( document ).ready(function() {
       // Next 
       next();
       function next() {
-        if (q < questions.length) {
-          q++
+        q++
+        if (q <= questions.length) {
           newQuestion();
         } else {
           saveScore();
@@ -80,19 +82,28 @@ $( document ).ready(function() {
       }
     });
   };
+
+  // # Timer
+
+
+  // # Enter Initials Save Score
+  function saveScore() {
+    // Hide Buttons
+    $("#answer-buttons").hide();
+    // Change Text
+    $("#question").text("All Done! Your Score: " + time);
+    // show end
+    $("#end").show();
+    // Save initials and score 
+    // create object saves initials and score
+    // local storage
+  }
+
+
+
+  // # High Score Page
+
+
+
 });
 
-// Enter Initials Save Score
-function saveScore() {
-  // Hide Buttons
-  $("#answer-buttons").hide();
-  // Change Text
-  $("#question").text("All Done! Your Score: " + time);
-  // show end
-  $("#end").show();
-  // Save initials and score 
-  // create object saves initials and score
-  // local storage
-}
-
-// High Score Page
