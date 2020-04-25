@@ -1,6 +1,4 @@
-* {
-  border: pink 1px solid;
-}
+
 html, body {
   height: 100%;
 }
@@ -22,17 +20,10 @@ main {
 /* User-Correct Styling */
 
 #user-correct {
-  font-family: 'Open Sans', sans-serif;
-  font-size: medium;
+  font-size: large;
 }
 
-.true {
-  color: green;
-}
-
-.false {
-  color: red;
-}
+/* Buttons */
 
 /* Answer Buttons */
 #answer-buttons .btn {

@@ -35,7 +35,6 @@ var q = 0;
 var time = 60;
 var answerDisplay = 3;
 
-
 $( document ).ready(function() {
   // # Start 
   // Intro Text
@@ -68,19 +67,21 @@ $( document ).ready(function() {
     // Right or Wrong 
     $(".answer").off().on("click", function() { 
       if (this.dataset.correct !== "true") {
-        $("#user-correct").text("Wrong!").addClass("false")
+        $("#user-correct").text('🐶 Millie Says "WRONG!"');
+        time = time - 20;
+        $("#time").text(" " + time)
       } else {
-        $("#user-correct").text("True!").addClass("true")
+        $("#user-correct").text('🐶 Millie Says "CORRECT!"');
       } 
-      // Next 
       answerTimer();
       next();
     });
   };
   
+  // # Next
   function next() {
-    if (q < questions.length - 1) {
-      q = q + 1;
+    q = q + 1;
+    if (q < questions.length) {
       newQuestion();
     } else {
       saveScore();
@@ -89,26 +90,26 @@ $( document ).ready(function() {
   // # Timer
   function timer() {
     var countdown = setInterval( function () {
-      if (time > 0){
-        time = time - 1;
-        $("#time").text(" " + time)
-      } else {
+      if (time <= 0 || q === questions.length){
         clearInterval(countdown);
         saveScore();
+      } else {
+        time = time - 1;
+        $("#time").text(" " + time)
       }
     },1000);
   }
 
   // # Answer Timer
   function answerTimer() {
+    answerDisplay = 3;
+    $("#user-correct").show();
     var display = setInterval( function () {
       if (answerDisplay > 0){
         answerDisplay = answerDisplay - 1;
-        $("#user-correct").show();
       } else {
         clearInterval(display);
         $("#user-correct").hide();
-        answerDisplay = 3;
       }
     },1000);
   }
