@@ -56,7 +56,7 @@ $( document ).ready(function() {
     $("#question").text(questions[0].question);
     // Change Answer Button Text
     for (var i = 0; i < 4; i++) {
-      $("#answer" + i).text(questions[0].answers[i].text).addClass(questions[0].class[i]);
+      $("#answer" + i).text(questions[0].answers[i].text).addClass(questions[0].class[i]).attr("data-correct", questions[0].answers[i].correct);
     }
     $("#answer-buttons").on("click", function() {
       // On Click Right  ****
@@ -69,7 +69,7 @@ $( document ).ready(function() {
   function questionTwo() {
     $("#question").text(questions[1].question);
     for (var i = 0; i < 4; i++) {
-      $("#answer" + i).text(questions[1].answers[i].text).addClass(questions[1].class[i]);
+      $("#answer" + i).text(questions[1].answers[i].text).addClass(questions[1].class[i]).attr("data-correct", questions[1].answers[i].correct);
     }
     $("#answer-buttons").on("click", function() {
       questionThree();
@@ -79,7 +79,7 @@ $( document ).ready(function() {
   function questionThree() {
     $("#question").text(questions[2].question);
     for (var i = 0; i < 4; i++) {
-      $("#answer" + i).text(questions[2].answers[i].text).addClass(questions[2].class[i]);
+      $("#answer" + i).text(questions[2].answers[i].text).addClass(questions[2].class[i]).attr("data-correct", questions[2].answers[i].correct);
     }
     $("#answer-buttons").on("click", function() {
       highScore();
