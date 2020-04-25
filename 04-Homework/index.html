@@ -12,6 +12,18 @@
   <title>Millie Quiz</title>
 </head>
 <body>
+  <!-- Nav -->
+  <nav>
+    <ul class="nav d-flex justify-content-between">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">View High Scores</a>
+      </li>
+      <li class="nav-item">
+        <div class="nav-link active">Time Left: 0</div> 
+      </li>
+    </ul>
+  </nav>
+  <!-- Main -->
   <main class="d-flex justify-content-center align-items-center">
     <!-- Container -->
     <div class="container card shadow p-3 mb-5 bg-white rounded">
@@ -22,19 +34,19 @@
         <!-- Answer Buttons -->
         <div id="answer-buttons" class="btn-grid">
           <div class="row d-flex justify-content-around">
-            <button class="btn btn-primary shadow-sm p-3 mb-5 rounded m-3 walk">Answer 1</button>
-            <button class="btn btn-primary shadow-sm p-3 mb-5 rounded m-3">Answer 2</button>
+            <button class="btn btn-primary shadow-sm p-3 mb-5 rounded">Answer 1</button>
+            <button class="btn btn-primary shadow-sm p-3 mb-5 rounded">Answer 2</button>
           </div>
           <div class="row d-flex justify-content-around">
-            <button class="btn btn-primary shadow-sm p-3 mb-5 rounded m-3">Answer 3</button>
-            <button class="btn btn-primary shadow-sm p-3 mb-5 rounded m-3">Answer 4</button>
+            <button class="btn btn-primary shadow-sm p-3 mb-5 rounded">Answer 3</button>
+            <button class="btn btn-primary shadow-sm p-3 mb-5 rounded">Answer 4</button>
           </div>
         </div>
       </div>
       <!-- Start -->
       <div class="controls d-flex justify-content-center">
         <button type="button" id="start-btn"
-          class="start-btn btn btn-primary btn-lg btn-block shadow-sm p-3 mb-5 rounded m-3">Start</button>
+          class="start-btn btn btn-primary btn-lg btn-block shadow-sm p-3 rounded">Start</button>
       </div>
     </div>
   </main>
