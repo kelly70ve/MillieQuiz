@@ -25,12 +25,16 @@ main {
   font-family: 'Roboto', sans-serif;
   font-size: 2em;
   text-shadow: 2px 1px black;
+  line-height: 1em;
 }
 
 #answer-buttons .btn:hover {
   opacity: 0.5;
 }
 
+/* Answer Button Images */
+
+/* Quesiton 1 */
 .dogs {
   background-image: url(./Assets/dogs.png);
 }
@@ -45,4 +49,40 @@ main {
 
 .cookies {
   background-image: url(./Assets/cookies.png);
+}
+
+/* Question 2 */
+
+.park {
+  background-image: url(./Assets/park.png);
+}
+
+.beach {
+  background-image: url(./Assets/beach.png);
+}
+
+.home {
+  background-image: url(./Assets/home.png);
+}
+
+.snow {
+  background-image: url(./Assets/snow.png);
+}
+
+/* Question 3 */
+
+.annies {
+  background-image: url(./Assets/annies.png);
+}
+
+.cowels {
+  background-image: url(./Assets/cowels.png);
+}
+
+.trails {
+  background-image: url(./Assets/trails.png);
+}
+
+.island {
+  background-image: url(./Assets/island.png);
 }
