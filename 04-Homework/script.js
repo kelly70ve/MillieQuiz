@@ -64,7 +64,8 @@ $( document ).ready(function() {
     }
 
     // Right or Wrong 
-    $(".answer").on("click", function() { 
+    $(".answer").off().on("click", function() { 
+      event.stopPropagation();
       if (this.dataset.correct !== "true") {
         alert("false!");
       } else {
@@ -72,19 +73,19 @@ $( document ).ready(function() {
       } 
       // Next 
       next();
-      function next() {
-        q++
-        if (q <= questions.length) {
-          newQuestion();
-        } else {
-          saveScore();
-        }
-      }
     });
   };
-
+  
+  function next() {
+    if (q < questions.length - 1) {
+      q = q + 1;
+      newQuestion();
+    } else {
+      saveScore();
+    }
+  }
   // # Timer
-
+  
 
   // # Enter Initials Save Score
   function saveScore() {
