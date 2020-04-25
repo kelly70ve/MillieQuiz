@@ -53,26 +53,37 @@ $( document ).ready(function() {
   })
 
   function newQuestion() {
-    $("#question").text(questions[q].question)
+    // Change Question
+    $("#question").text(questions[q].question);
+
+    // Change Answers
     for (var i = 0; i < 4; i++) {
       $("#answer" + i).text(questions[q].answers[i].text).addClass(questions[q].class[i]).attr("data-correct", questions[q].answers[i].correct);
     }
-    $("#answer-buttons").on("click", function() { 
+    $(".answer").on("click", function() { 
       // On Click Right  ****
-      // On Click Wrong (subtract from time) ****
-      // Change Question
-      if (q < questions.length) {
-        q++
-        newQuestion();
+      // On Click Wrong - subtract from time ****
+      if (this.dataset.correct !== "true") {
+        alert("false!");
       } else {
-        highScore();
+        alert("true!")
+      } 
+      // Next 
+      next();
+      function next() {
+        if (q < questions.length) {
+          q++
+          newQuestion();
+        } else {
+          saveScore();
+        }
       }
     });
   };
 });
 
 // Enter Initials Save Score
-function highScore() {
+function saveScore() {
   // Hide Buttons
   $("#answer-buttons").hide();
   // Change Text
