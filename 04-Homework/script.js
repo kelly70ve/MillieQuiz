@@ -31,6 +31,7 @@ var questions = [
   }
 ]
 
+var q = 0;
 var time = 0;
 
 
@@ -46,43 +47,26 @@ $( document ).ready(function() {
   $("#start-btn").on("click", function() {
     // hide start button 
     $("#start-btn").hide();
-    questionOne();
+    newQuestion();
     // timer(); ****
     $("#answer-buttons").show();
   })
 
-  function questionOne() {
-    // Change Question Text
-    $("#question").text(questions[0].question);
-    // Change Answer Button Text
+  function newQuestion() {
+    $("#question").text(questions[q].question)
     for (var i = 0; i < 4; i++) {
-      $("#answer" + i).text(questions[0].answers[i].text).addClass(questions[0].class[i]).attr("data-correct", questions[0].answers[i].correct);
+      $("#answer" + i).text(questions[q].answers[i].text).addClass(questions[q].class[i]).attr("data-correct", questions[q].answers[i].correct);
     }
-    $("#answer-buttons").on("click", function() {
+    $("#answer-buttons").on("click", function() { 
       // On Click Right  ****
       // On Click Wrong (subtract from time) ****
       // Change Question
-      questionTwo();
-    });
-  };
-
-  function questionTwo() {
-    $("#question").text(questions[1].question);
-    for (var i = 0; i < 4; i++) {
-      $("#answer" + i).text(questions[1].answers[i].text).addClass(questions[1].class[i]).attr("data-correct", questions[1].answers[i].correct);
-    }
-    $("#answer-buttons").on("click", function() {
-      questionThree();
-    });
-  };
-  
-  function questionThree() {
-    $("#question").text(questions[2].question);
-    for (var i = 0; i < 4; i++) {
-      $("#answer" + i).text(questions[2].answers[i].text).addClass(questions[2].class[i]).attr("data-correct", questions[2].answers[i].correct);
-    }
-    $("#answer-buttons").on("click", function() {
-      highScore();
+      if (q < questions.length) {
+        q++
+        newQuestion();
+      } else {
+        highScore();
+      }
     });
   };
 });
