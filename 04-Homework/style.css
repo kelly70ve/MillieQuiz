@@ -23,13 +23,26 @@ main {
   height: 125px;
   width: 175px;
   font-family: 'Roboto', sans-serif;
-  font-size: large;
+  font-size: 2em;
+  text-shadow: 2px 1px black;
 }
 
-/* .walk {
-  background-image: url(./Assets/1.png);
-}
-
-.walk:hover {
+#answer-buttons .btn:hover {
   opacity: 0.5;
-} */
+}
+
+.dogs {
+  background-image: url(./Assets/dogs.png);
+}
+
+.flowers {
+  background-image: url(./Assets/flowers.png);
+}
+
+.food {
+  background-image: url(./Assets/food.png);
+}
+
+.cookies {
+  background-image: url(./Assets/cookies.png);
+}
