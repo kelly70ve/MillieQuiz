@@ -1,0 +1,35 @@
+
+html, body {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+}
+
+.container {
+  width: 30rem;
+}
+/* Question Styling */
+
+#question {
+  font-family: 'Open Sans', sans-serif;
+  font-size: large;
+}
+
+
+/* Answer Buttons */
+#answer-buttons .btn {
+  height: 125px;
+  width: 175px;
+  font-family: 'Roboto', sans-serif;
+  font-size: large;
+}
+
+/* .walk {
+  background-image: url(./Assets/1.png);
+}
+
+.walk:hover {
+  opacity: 0.5;
+} */

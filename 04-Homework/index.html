@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- BootStrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <title>Millie Quiz</title>
+</head>
+<body>
+  <main class="d-flex justify-content-center align-items-center">
+    <!-- Container -->
+    <div class="container card shadow p-3 mb-5 bg-white rounded">
+      <!-- Question Container -->
+      <div id="question-container" class="hide">
+        <!-- Questions -->
+        <div id="question" class="text-center p-4">Question</div>
+        <!-- Answer Buttons -->
+        <div id="answer-buttons" class="btn-grid">
+          <div class="row d-flex justify-content-around">
+            <button class="btn btn-primary shadow-sm p-3 mb-5 rounded m-3 walk">Answer 1</button>
+            <button class="btn btn-primary shadow-sm p-3 mb-5 rounded m-3">Answer 2</button>
+          </div>
+          <div class="row d-flex justify-content-around">
+            <button class="btn btn-primary shadow-sm p-3 mb-5 rounded m-3">Answer 3</button>
+            <button class="btn btn-primary shadow-sm p-3 mb-5 rounded m-3">Answer 4</button>
+          </div>
+        </div>
+      </div>
+      <!-- Start -->
+      <div class="controls d-flex justify-content-center">
+        <button type="button" id="start-btn"
+          class="start-btn btn btn-primary btn-lg btn-block shadow-sm p-3 mb-5 rounded m-3">Start</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
