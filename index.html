@@ -22,7 +22,7 @@
   <nav>
     <ul class="nav d-flex justify-content-between">
       <li class="nav-item">
-        <a class="nav-link active" href="./highscore.html">View High Scores</a>
+        <a class="nav-link active" href="#">View High Scores</a>
       </li>
       <li class="nav-item">
         <div class="nav-link active">Time Left:<span id="time"></span></div>
@@ -36,7 +36,7 @@
       <!-- Question Container -->
       <div id="question-container">
         <!-- Questions -->
-        <div id="question" class="text-center p-4 mb-3">Question</div> 
+        <div id="question" class="text-center p-4 mb-3">Question</div>
         <!-- Answer Buttons -->
         <div id="answer-buttons" class="btn-grid">
           <div class="row d-flex justify-content-around">
@@ -54,7 +54,7 @@
         <button type="button" id="start-btn"
           class="start-btn btn btn-primary btn-lg btn-block shadow-sm p-3 rounded">Start</button>
       </div>
-      <!-- End -->
+      <!-- Submit Initials -->
       <div class="text-center" id="end">
         <p>Please enter your initials</p>
         <div class="form-group">
@@ -62,6 +62,17 @@
         </div>
         <button type="button" id="sumbit-btn"
           class="submit-btn btn btn-primary btn-lg btn-block shadow-sm p-3 rounded mb-2">Submit</button>
+      </div>
+      <!-- HighScores -->
+      <div id="scores">
+        <ul id="scores-list">
+          <li></li>
+        </ul>
+        <!-- Buttons -->
+        <div class="row d-flex justify-content-around">
+          <button class="btn btn-primary shadow-sm rounded" id="try-again">Try Again</a>
+          <button class="btn btn-primary shadow-sm rounded">Clear Scores</button>
+        </div>
       </div>
       <span id="user-correct" class="text-center"></span>
     </div>

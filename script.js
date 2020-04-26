@@ -34,25 +34,33 @@ var questions = [
 var q = 0;
 var time = 60;
 var answerDisplay = 3;
+var highScore = [];
+
 
 $( document ).ready(function() {
   // # Start 
-  // Intro Text
-  $("#question").text("Do you think you know Millie?");
-  // Hide Answer Buttons & end
-  $("#answer-buttons").hide();
-  $("#end").hide();
-  // Set Timer to 60sec
-  $("#time").text(" " + time);
-  // On Click Start Questions & timer
-  $("#start-btn").on("click", function() {
-    // hide start button 
-    $("#start-btn").hide();
-    newQuestion();
-    timer();
-    $("#answer-buttons").show();
-  });
-
+  reset();
+  function reset() {
+    // Hide Answer Buttons, Initials, High Score
+    $("#answer-buttons").hide();
+    $("#end").hide();
+    $("#scores").hide();
+    // Set Timer to 60sec
+    time = 60;
+    $("#time").text(" " + time);
+    // Intro Text
+    $("#question").text("Do you think you know Millie?");
+    // On Click Start Questions & timer
+    $("#start-btn").show();
+    $("#start-btn").on("click", function() {
+      // hide start button 
+      $("#start-btn").hide();
+      q = 0;
+      newQuestion();
+      timer();
+      $("#answer-buttons").show();
+    });
+  }
 
   // # New Question 
   function newQuestion() {
@@ -113,9 +121,7 @@ $( document ).ready(function() {
       }
     },1000);
   }
-  
 
-  
 
   // # Enter Initials Save Score
   function saveScore() {
@@ -126,21 +132,40 @@ $( document ).ready(function() {
     // show end
     $("#end").show();
     // Save initials and score 
-    $("#sumbit-btn").on("click", function () {
+    $("#sumbit-btn").off().on("click", function () {
       event.preventDefault();
-      var highScore = {
+      var user = {
         initials: $("#initials").val().toUpperCase().trim(),
         score: time,
-      };
+      }
+      highScore.push(user);
       localStorage.setItem("highScore", JSON.stringify(highScore));
-      window.location.href = "./highscore.html";
+      showHighScores();
     })
   }
 
+  // # High Scores
 
+  function showHighScores() {
+    $("#end").hide();
+    $("#scores").show();
+    $("#question").text("High Scores");
 
-  // # High Score Page
+    var storedHighScore = JSON.parse(localStorage.getItem("highScore"));
 
+    if (storedHighScore !== null){
+      highScore = storedHighScore;
+    }
+    renderScores();
+  }
+
+  function renderScores() {
+    
+  }
+
+  $("#try-again").off().on("click", function () {
+    reset();
+  })
 
 
 });
