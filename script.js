@@ -39,6 +39,7 @@ var highScore = [];
 
 $( document ).ready(function() {
   // # Start 
+  init();
   reset();
   function reset() {
     // Hide Answer Buttons, Initials, High Score
@@ -150,7 +151,10 @@ $( document ).ready(function() {
     $("#end").hide();
     $("#scores").show();
     $("#question").text("High Scores");
+    init();
+  }
 
+  function init() {
     var storedHighScore = JSON.parse(localStorage.getItem("highScore"));
 
     if (storedHighScore !== null){
@@ -160,7 +164,14 @@ $( document ).ready(function() {
   }
 
   function renderScores() {
-    
+    $("#scores-list").empty();
+
+    for (var i = 0; i < highScore.length; i++) {
+      var userScore = highScore[i].initials;
+      $("#scores-list").append($("<li>").text(userScore));
+    }
+
+
   }
 
   $("#try-again").off().on("click", function () {
