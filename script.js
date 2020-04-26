@@ -144,6 +144,10 @@ $( document ).ready(function() {
       init();
     })
   }
+
+  //  # High Scores 
+
+
   function init() {
     var storedHighScore = JSON.parse(localStorage.getItem("highScore"));
 
@@ -157,12 +161,19 @@ $( document ).ready(function() {
     $("#scores-list").empty();
 
     for (var i = 0; i < highScore.length; i++) {
-      var userScore = highScore[i].initials;
-      $("#scores-list").append($("<li>").text(userScore));
+      var initials = $("<td>").text((highScore[i].initials));
+      var score = $("<td>").text((highScore[i].score));
+      $("#scores-list").append($("<tr>").append(initials, score));
+
     }
+  };
 
+  // clear scores
 
-  }
+  $("#clear").on("click", function () {
+    localStorage.clear();
+    $("#scores-list").empty();
+  });
 
 });
 

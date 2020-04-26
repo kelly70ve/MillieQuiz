@@ -32,16 +32,22 @@
   <!-- Main -->
   <main class="d-flex justify-content-center align-items-center">
     <div class="container card shadow p-3 mb-5 bg-white rounded">
-      <h1 class="text-center p-4 mb-3">High Scores</h1>
+      <h1 class="text-center p-4">High Scores</h1>
       <div id="highscore-container">
-        <ul id="scores-list">
-          <li></li>
-        </ul>
-        <hr>
+        <table class="table table-hover mb-4">
+          <thead>
+            <tr>
+              <th scope="col">Initials</th>
+              <th scope="col">Scores</th>
+            </tr>
+          </thead>
+          <tbody id="scores-list">
+          </tbody>
+        </table>
         <!-- Buttons -->
         <div class="row d-flex justify-content-around">
           <a class="btn btn-primary shadow-sm rounded" href="./index.html">Try Again</a>
-          <button class="btn btn-primary shadow-sm rounded">Clear Scores</button>
+          <button class="btn btn-primary shadow-sm rounded" id="clear">Clear Scores</button>
         </div>
       </div>
     </div>
