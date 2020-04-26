@@ -21,6 +21,11 @@ main {
   font-size: larger;
 }
 
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: larger;
+}
+
 /* User-Correct Styling */
 
 #user-correct {

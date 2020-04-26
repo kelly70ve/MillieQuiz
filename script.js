@@ -45,7 +45,6 @@ $( document ).ready(function() {
     // Hide Answer Buttons, Initials, High Score
     $("#answer-buttons").hide();
     $("#end").hide();
-    $("#scores").hide();
     // Set Timer to 60sec
     time = 60;
     $("#time").text(" " + time);
@@ -141,19 +140,10 @@ $( document ).ready(function() {
       }
       highScore.push(user);
       localStorage.setItem("highScore", JSON.stringify(highScore));
-      showHighScores();
+      window.location.replace("./highscores.html")
+      init();
     })
   }
-
-  // # High Scores
-
-  function showHighScores() {
-    $("#end").hide();
-    $("#scores").show();
-    $("#question").text("High Scores");
-    init();
-  }
-
   function init() {
     var storedHighScore = JSON.parse(localStorage.getItem("highScore"));
 
@@ -173,11 +163,6 @@ $( document ).ready(function() {
 
 
   }
-
-  $("#try-again").off().on("click", function () {
-    reset();
-  })
-
 
 });
 
