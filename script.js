@@ -115,6 +115,8 @@ $( document ).ready(function() {
   }
   
 
+  
+
   // # Enter Initials Save Score
   function saveScore() {
     // Hide Buttons
@@ -124,8 +126,15 @@ $( document ).ready(function() {
     // show end
     $("#end").show();
     // Save initials and score 
-    // create object saves initials and score
-    // local storage
+    $("#sumbit-btn").on("click", function () {
+      event.preventDefault();
+      var highScore = {
+        initials: $("#initials").val().toUpperCase().trim(),
+        score: time,
+      };
+      localStorage.setItem("highScore", JSON.stringify(highScore));
+      window.location.href = "./highscore.html";
+    })
   }
 
 
