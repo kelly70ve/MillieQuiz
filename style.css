@@ -7,9 +7,9 @@ main {
   height: 100%;
 }
 
-/* .container {
+.container {
   width: 30rem;
-} */
+}
 /* Question Styling */
 
 #question {
@@ -27,24 +27,13 @@ main {
 
 /* Answer Buttons */
 #answer-buttons .btn {
-  height: 250px;
-  width: 350px;
+  height: 125px;
+  width: 175px;
   font-family: 'Roboto', sans-serif;
-  font-size: 3em;
+  font-size: 2em;
   text-shadow: 2px 1px black;
   line-height: 1em;
   border: none;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; 
-}
-@media only screen and (max-width: 400px) {
-  #answer-buttons .btn {
-    height: 125px;
-    width: 175px;
-    font-size: 2em;
-    margin-bottom: 5px;
-  }
 }
 
 #answer-buttons .btn:hover {
