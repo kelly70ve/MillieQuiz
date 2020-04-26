@@ -7,14 +7,14 @@ main {
   height: 100%;
 }
 
-.container {
+/* .container {
   width: 30rem;
-}
+} */
 /* Question Styling */
 
 #question {
   font-family: 'Open Sans', sans-serif;
-  font-size: large;
+  font-size: larger;
 }
 
 /* User-Correct Styling */
@@ -27,13 +27,24 @@ main {
 
 /* Answer Buttons */
 #answer-buttons .btn {
-  height: 125px;
-  width: 175px;
+  height: 250px;
+  width: 350px;
   font-family: 'Roboto', sans-serif;
-  font-size: 2em;
+  font-size: 3em;
   text-shadow: 2px 1px black;
   line-height: 1em;
   border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+}
+@media only screen and (max-width: 400px) {
+  #answer-buttons .btn {
+    height: 125px;
+    width: 175px;
+    font-size: 2em;
+    margin-bottom: 5px;
+  }
 }
 
 #answer-buttons .btn:hover {
